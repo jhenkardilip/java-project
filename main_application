@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class CustomerApp {
+    public static void main(String[] args) {
+        List<Customer> customers = new ArrayList<>();
+
+        // Adding sample customers
+        customers.add(new Customer(3, 1500.00, "Alice", "Smith"));
+        customers.add(new Customer(2, 1200.50, "Bob", "Jones"));
+        customers.add(new Customer(1, 2000.00, "Alice", "Johnson"));
+        customers.add(new Customer(4, 900.75, "Bob", "Anderson"));
+
+        // Sorting the customers
+        Collections.sort(customers, new CustomerComparator());
+
+        // Displaying the sorted list
+        for (Customer customer : customers) {
+            System.out.println(customer);
+        }
+    }
+}
